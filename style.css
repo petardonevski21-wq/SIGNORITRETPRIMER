@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+/* Hero sekcija (slikata preku cel ekran) */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Zatemneta pozadina (overlay od 30%) i tvojata slika */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('./sliki/1.png'); 
+    background-color: #b0b0b0; /* Zastitna boja dur ne se vcita slikata */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;  
+}
+
+/* LUXURY DESKTOP NAVIGATION */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background-color 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease;
+    z-index: 1000;
+}
+
+/* Scroll OR Hover State */
+.header.scrolled,
+.header:hover {
+    background-color: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 0 50px;
+    height: 100%;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 7px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.35s ease;
+}
+
+.header.scrolled .logo,
+.header:hover .logo {
+    color: #111111;
+}
+
+.nav-links {
+    display: flex;
+    /* Namalen e gap-ot (од 36px на 12px) бидејќи сега линковите имаат padding */
+    gap: 12px; 
+    align-items: center;
+}
+
+.nav-links a {
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    /* Додаден padding за да се оцрта позадината убаво */
+    padding: 10px 14px; 
+    border-radius: 4px; /* Заоблување за попрофесионален изглед */
+    transition: color 0.35s ease, background-color 0.3s ease;
+}
+
+/* Hover ефект кога менито е проѕирно (бел текст) */
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Блага проѕирна бела позадина */
+}
+
+.header.scrolled .nav-links a,
+.header:hover .nav-links a {
+    color: #111111;
+}
+
+/* Hover ефект кога менито е скролано/бело (црн текст) */
+.header.scrolled .nav-links a:hover,
+.header:hover .nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.08); /* Блага проѕирна сива позадина */
+}
+
+.nav-icons {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-icons svg {
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.35s ease, transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.header.scrolled .nav-icons svg,
+.header:hover .nav-icons svg {
+    color: #111111;
+}
+
+/* HERO TEKST - Premesten na LEVATA strana */
+.hero-content {
+    position: absolute;
+    top: 36%;
+    left: 12%;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+}
+
+/* Kopche bez linija spored baranjeto */
+.hero-content .shop-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none; 
+    transition: opacity 0.3s ease;
+}
+
+.hero-content .shop-btn:hover {
+    opacity: 0.7;
+}
